@@ -4,7 +4,7 @@ fdtfile=rockchip/rk3566-taishanpi-v10.dtb
 rootdev=/dev/mmcblk0p2
 rootfstype=ext4
 rootflags=rw,errors=remount-ro
-overlay_prefix=rk3399
+overlay_prefix=rk3566
 overlays=
 extraargs=
 extraboardargs=net.ifnames=0 max_loop=128
