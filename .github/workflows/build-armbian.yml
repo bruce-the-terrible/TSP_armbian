@@ -329,36 +329,4 @@ jobs:
           artifacts: build/output/images/*
           allowUpdates: true
           token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Rebuild Armbian
-        uses: ophub/amlogic-s9xxx-armbian@main
-        if: ${{ steps.clean.outputs.status }} == 'success' && !cancelled()
-        with:
-          build_target: armbian
-          armbian_path: build/output/images/*.img.gz
-          armbian_board: ${{ inputs.armbian_board }}
-          armbian_kernel: ${{ inputs.armbian_kernel }}
-          auto_kernel: ${{ inputs.auto_kernel }}
-          kernel_repo: ${{ inputs.kernel_repo }}
-          kernel_usage: ${{ inputs.kernel_usage }}
-          armbian_fstype: ${{ inputs.armbian_fstype }}
-          builder_name: ${{ inputs.builder_name }}
-
-      - name: Upload Rebuild image to Release
-        uses: ncipollo/release-action@main
-        if: ${{ env.PACKAGED_STATUS }} == 'success' && !cancelled()
-        with:
-          tag: ${{ steps.clean.outputs.build_tag }}
-          artifacts: ${{ env.PACKAGED_OUTPUTPATH }}/*
-          allowUpdates: true
-          removeArtifacts: false
-          replacesArtifacts: true
-          token: ${{ secrets.GITHUB_TOKEN }}
-          body: |
-            ### Armbian Image information
-            - Default username: root
-            - Default password: 1234
-            - Install command: armbian-install
-            - Update command: armbian-update
-            ### Armbian Image Verification
-            - sha256sum
+  
