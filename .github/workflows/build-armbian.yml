@@ -302,7 +302,7 @@ jobs:
         run: |
           # Compile method and parameter description: https://docs.armbian.com/Developer-Guide_Build-Options
           cd build/
-              ./compile.sh RELEASE=${{ inputs.set_release }} BOARD=lckfb-taishanpi BRANCH=current BUILD_MINIMAL=no BOOTSIZE=2048 \
+              ./compile.sh RELEASE=${{ inputs.set_release }} BOARD=lckfb-taishanpi BRANCH=current BUILD_MINIMAL=no \
                            BUILD_ONLY=default HOST=armbian BUILD_DESKTOP=yes DESKTOP_APPGROUPS_SELECTED='browsers,desktop_tools,editors,internet,languages,multimedia,remote_desktop' \
                             DESKTOP_ENVIRONMENT=gnome DESKTOP_ENVIRONMENT_CONFIG_NAME=config_base EXPERT=yes KERNEL_CONFIGURE=no \
                            COMPRESS_OUTPUTIMAGE="sha" SHARE_LOG=yes
