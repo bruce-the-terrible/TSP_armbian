@@ -16,7 +16,7 @@ on:
       armbian_board:
         description: "Select device board."
         required: false
-        default: "all"
+        default: "lckfb-tspi"
         type: choice
         options:
           - all
