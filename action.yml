@@ -39,11 +39,11 @@ inputs:
   armbian_size:
     description: "Set armbian rootfs size(Unit: MiB)."
     required: false
-    default: ""
+    default: "8192"
   builder_name:
     description: "Set Armbian builder signature."
     required: false
-    default: ""
+    default: "BruceGong"
   # For compile kernel -----
   kernel_source:
     description: "Select the kernel source code"
